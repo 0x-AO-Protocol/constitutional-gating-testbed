@@ -10,7 +10,8 @@ English translation of the operator's runbook for the 30 runs analysed in the pa
 ## B-1 Code and environment (Terminal A)
 
 ```bash
-cd ~/ao_system_openclaw
+git clone https://github.com/0x-AO-Protocol/constitutional-gating-testbed.git ~/constitutional-gating-testbed
+cd ~/constitutional-gating-testbed
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements-adversarial.txt pytest
 mkdir -p ~/logs
@@ -26,7 +27,7 @@ Check: `vertexai.generative_models OK` is printed, and pytest ends with `17 pass
 ## B-2 Claude Haiku 4.5 connectivity and quota (Terminal A)
 
 ```bash
-cd ~/ao_system_openclaw && source .venv/bin/activate
+cd ~/constitutional-gating-testbed && source .venv/bin/activate
 export AO_GCP_PROJECT_ID=<your-project>
 export AO_GATEKEEPER_REGION=us-east5
 export AO_GATEKEEPER_MODEL=claude-haiku-4-5
@@ -43,7 +44,7 @@ Check: the final `=== Summary ===` block shows `ok: 10`, `429: 0`, `not_found: 0
 **Terminal A (Gatekeeper):**
 
 ```bash
-cd ~/ao_system_openclaw && source .venv/bin/activate
+cd ~/constitutional-gating-testbed && source .venv/bin/activate
 export AO_GCP_PROJECT_ID=<your-project>
 export AO_ADVERSARIAL_MODE=serve
 export AO_GATEKEEPER_REGION=us-east5
@@ -57,7 +58,7 @@ export AO_SALES_AGENT_REGION=us-central1
 **Terminal B (agents):**
 
 ```bash
-cd ~/ao_system_openclaw/brain_cloud_openclaw/agents && source ~/ao_system_openclaw/.venv/bin/activate
+cd ~/constitutional-gating-testbed/brain_cloud_openclaw/agents && source ~/constitutional-gating-testbed/.venv/bin/activate
 export AO_GCP_PROJECT_ID=<your-project>
 export AO_GCP_LOCATION=us-central1
 export AO_GATEKEEPER_MODEL=claude-haiku-4-5    # same value as Terminal A

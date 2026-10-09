@@ -87,6 +87,8 @@ This repository is a snapshot of the authors' internal repository at commit `e3e
 
 The four earliest runs used the preceding commit `ce6d198`. The only difference is the retry wrapper: `gemini_retry.py` and its test were added, and the three agent files gained the import, the wrapped call sites and a `gemini_429_retries` field in the summary record. Prompts, constitution, lexicon and verdict logic are unchanged (paper, Section 4.5).
 
+File and directory names that contain `openclaw` (for example `brain_cloud_openclaw/` and `phase3_exception_lexicon_openclaw.py`) keep the internal codename of the original repository, so that they stay byte-identical to commit `e3e1270` and match the file names cited in the paper. The codename is unrelated to the OpenClaw open-source agent project. Mentions of `0x-AO-Protocol/ao_system_openclaw` in the logs and in `analysis/out/tables.md` refer to that internal repository.
+
 Not included from the internal repository: two files that belong to a different prototype and play no part in the paper (an integration agent and an API server), a duplicate of `schemas_openclaw.py` without a file extension, the internal working README and pull-request description, and the operator's runbook, which was written in Japanese and is replaced here by an English translation with project-specific identifiers replaced by placeholders.
 
 ## Citation
