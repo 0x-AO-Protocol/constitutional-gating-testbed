@@ -1,0 +1,21 @@
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Secrets (never commit)
+.env
+.env.*
+*.key
+*.pem
+
+# Note: *.log is deliberately NOT ignored; the run logs are part of this release.
